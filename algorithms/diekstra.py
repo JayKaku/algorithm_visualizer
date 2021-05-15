@@ -27,7 +27,7 @@ def start_search(grid, PATHFINDER_DELAY, SHORTEST_PATH_DELAY):
         start_pos.hScore = algorithm_utils.find_h(start_pos, end_pos)
         start_pos.fScore = algorithm_utils.find_f(start_pos.gScore, start_pos.hScore)
 
-
+        #initializing two lists for path finding
         openList = [start_pos]
         closedList = []
 
@@ -62,7 +62,7 @@ def start_search(grid, PATHFINDER_DELAY, SHORTEST_PATH_DELAY):
                 start_pos.color = colors.RED
                 end_pos.color = colors.RED
                 return
-
+            #current starting node turns red when we start path finding 
             if current_node == start_pos:
                 current_node.color = colors.RED
             else:
@@ -121,4 +121,4 @@ def start_search(grid, PATHFINDER_DELAY, SHORTEST_PATH_DELAY):
                 node.color = colors.GREEN
             else:
                 node.backtrack = True
-                node.turn_red = True
+                node.turn_red = True        #if path not found the paater color turns red

@@ -19,8 +19,10 @@ class Grid_square:
         self.FPS = FPS
 
 
-
+        #maintaining state if the cell itself free, wall, start, end 
         self.state = "free"
+
+        #initial colour
         self.color = colors.WHITE
 
         self.gScore = None
@@ -31,6 +33,7 @@ class Grid_square:
         self.parent = None
         self.border = False
 
+        #first found to maintain state starting colour purple r=128,g=0,b=128 => #800080
         self.first = False
         self.r_value = 128
         self.g_value = 0
@@ -128,7 +131,7 @@ class Grid_square:
 
 
 
-            #IF IS BEing backtracked and needs to turn red
+            #IF IS BEing backtracked and needs to turn red i.e. path not found condition
             elif self.backtrack == True and self.turn_red == True:
 
                 multiplyer = (1 / self.FPS) * 100
